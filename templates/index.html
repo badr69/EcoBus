@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block title %}ecobus{% endblock %}
+
+{% block body %}
+    <h1>Welcome to Eco-bus</h1>
+    <a href="{{ url_for('create_trip') }}"></a>
+    {% for trip in trips %}
+
+        <li>{{ trip[1] }} -to- {{ trip[2] }}</li>
+    {% endfor %}
+
+{% endblock %}

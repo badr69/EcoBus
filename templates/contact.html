@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block title %}Contact{% endblock %}
+
+{% block body %}
+    <form method="POST" action="{{ url_for('contact') }}">
+    <div>{{ form.name.label }}: {{ form.name(class="css_class") }}</div>
+    <div>{{ form.email.label }}: {{ form.email() }}</div>
+     <div>{{ form.content.label }}: {{ form.content(class="css_class") }}</div>
+
+</form>
+
+{% endblock %}

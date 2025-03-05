@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block title %}Register{% endblock %}
+
+{% block body %}
+    <form method="POST" action="{{ url_for('login') }}">
+        <div>{{ form.email.label }}: {{ form.email(class="css_class") }}</div>
+        <div>{{ form.password.label }}: {{ form.password() }}</div>
+         <button type="submit">{{ form.submit.label }}</button>
+    </form>
+{% endblock %}
