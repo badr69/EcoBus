@@ -2,12 +2,15 @@
 
 {% block title %}Contact{% endblock %}
 
+
+
 {% block body %}
+<div class="container">
     <form method="POST" action="{{ url_for('contact') }}">
-    <div>{{ form.name.label }}: {{ form.name(class="css_class") }}</div>
-    <div>{{ form.email.label }}: {{ form.email() }}</div>
-     <div>{{ form.content.label }}: {{ form.content(class="css_class") }}</div>
-
-</form>
-
+        <div>{{ form.name.label }}: {{ form.name(class="form-label form-control") }}</div>
+        <div>{{ form.email.label }}: {{ form.email(class="form-label form-control") }}</div>
+        <div>{{ form.content.label }}: {{ form.content(class="form-label form-control") }}</div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
 {% endblock %}

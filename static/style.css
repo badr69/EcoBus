@@ -1,6 +1,8 @@
 body {
-    background-color: #706e6a;
     font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
 }
 
 h1 {
@@ -9,4 +11,12 @@ h1 {
 
 .navbar  {
     background-color: bisque;
+    margin-bottom: 20px;
+}
+.container {
+    width: 50%;
+    margin: auto;
+    background-color: antiquewhite;
+    padding: 50px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }

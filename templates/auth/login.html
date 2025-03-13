@@ -3,9 +3,11 @@
 {% block title %}Register{% endblock %}
 
 {% block body %}
+    <div class="container">
     <form method="POST" action="{{ url_for('login') }}">
-        <div>{{ form.email.label }}: {{ form.email(class="css_class") }}</div>
-        <div>{{ form.password.label }}: {{ form.password() }}</div>
-         <button type="submit">{{ form.submit.label }}</button>
+        <div>{{ form.email.label }}: {{ form.email(class="form-label form-control") }}</div>
+        <div>{{ form.password.label }}: {{ form.password(class="form-label form-control") }}</div>
+         <button type="submit"  class="btn btn-primary" >Submit</button>
     </form>
+    </div>
 {% endblock %}

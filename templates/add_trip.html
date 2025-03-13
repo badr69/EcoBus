@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}trip{% endblock %}
+
+{% block body %}
+    <div class="container">
+
+    <form action="{{ url_for('add_trip') }}" method="post">
+        {{ form.departure.label }}: {{ form.departure(class="form-label form-control") }}
+        {{ form.destination.label }}: {{ form.destination(class="form-label form-control") }}
+        {{ form.departure_time.label }}: {{ form.departure_time(class="form-label form-control") }}
+        {{ form.available_seats.label }}: {{ form.available_seats(class="form-label form-control") }}
+        <button class="btn btn-primary" type="submit">Submit</button>
+    </form>
+    </div>
+{% endblock %}

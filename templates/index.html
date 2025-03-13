@@ -4,10 +4,21 @@
 
 {% block body %}
     <h1>Welcome to Eco-bus</h1>
-    <a href="{{ url_for('create_trip') }}"></a>
+    <div class="container">
+
+
+    <a href="{{ url_for('add_trip') }}"></a>
+<ul>
     {% for trip in trips %}
 
-        <li>{{ trip[1] }} -to- {{ trip[2] }}</li>
+        <li><b>departure</b>: {{ trip[1] }} ------to------ <b>destination</b>: {{ trip[2] }}<br>
+            <p><b>departure-time</b>:  {{ trip[3] }}<br>
+            <p><b>Available_seats</b>: {{ trip[4] }}</p>
+        </li>
+
     {% endfor %}
+</ul>
+    </div>
+
 
 {% endblock %}
