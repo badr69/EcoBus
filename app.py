@@ -1,12 +1,11 @@
 from flask import Flask, render_template, request, url_for, redirect, session, flash
-from config import Config
-import os
+
 from db import get_db_connection
 from forms import RegisterForm, LoginForm, ContactForm, TripForm
-import time
+
 
 app = Flask(__name__)
-app.config.from_object(Config)
+
 
 
 #TODO: afficher tous les trajets
@@ -43,14 +42,6 @@ def add_trip():
 # TODO: update a specific trip
 #
 # TODO: route pour la page  de contact
-@app.route('/contact', methods=['GET', 'POST'])
-def contact():
-    contactform = ContactForm()
-    if request.method == 'POST':
-        name = request.form['name']
-        email = request.form['email']
-        content = request.form['content']
-    return render_template('contact.html', form=contactform)
 
 
 # TODO: routes for auth
@@ -102,7 +93,15 @@ def login():
 def logout():
     return redirect(url_for('index'))
 
-
+@app.route("/contact", methods=["GET", "POST"])
+def contact():
+    contactform = ContactForm()
+    if request.method == "POST":
+        name = request.form["name"]
+        email = request.form["email"]
+        content = request.form["content"]
+        submit = request.form['submit']
+    return render_template("contact.html", form=contactform)
 
 
 if __name__ == '__main__':
